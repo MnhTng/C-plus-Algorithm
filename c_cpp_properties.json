@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "compilerPath": "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/gcc.exe",
+      "intelliSenseMode": "windows-gcc-x64"
+    },
+    {
+      "name": "Win64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "d:/code/.vscode/settings.json"
+    }
+  ],
+  "version": 4
+}
