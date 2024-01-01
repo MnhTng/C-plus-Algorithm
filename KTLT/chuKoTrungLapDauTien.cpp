@@ -8,15 +8,35 @@ int main(){
         string s;
         cin >> s;
         queue<char> q;
+        vector<int> v;
         map<char, int> mp;
+        int pos = 0;
 
         for( char x : s ){
-            if( !mp[x] )
+            if( !mp[x] ){
                 q.push( x );
+                v.push_back( pos );
+            }
             
+            pos++;
             mp[x]++;
         }
 
-        
+        int check = 1, count = 0;
+        while( !q.empty() ){
+            if( mp[q.front()] == 1 ){
+                check = 0;
+                cout << v[count] << endl;
+                break;
+            }
+            
+            count++;
+            q.pop();
+        }
+
+        if( check )
+            cout << "-1" << endl;
     }
+    system("pause");
+    return 0;
 }
