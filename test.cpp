@@ -2,13 +2,13 @@
 using namespace std;
 
 int main(){
-    map<int, int> mp;
-    mp[4] = 3;
-    mp[2] = 9;
-    mp[6] = 1;
-    mp[0] = 5;
-    for( auto ite : mp )
-        cout << ite.first << " " << ite.second << endl;
+    string s = "hello";
+    string t = s;
+    reverse( s.begin(), s.end() );
+    if( s == t )
+        cout << "1" << endl;
+    else
+        cout << "0" << endl;
     system("pause");
     return 0;
 }
