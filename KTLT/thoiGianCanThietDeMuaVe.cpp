@@ -1,6 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int totalTimeToBuy( vector<int> v, int k ){
+    int kq = 0, count = 0, check = 1;
+
+    while( 1 ){
+        for( int i = 0; i < v.size(); i++ ){
+            if( !v[k] ){
+                check = 0;
+                kq += count;
+                break;
+            }
+            else if( v[i] ){
+                v[i]--;
+                count++;
+            }
+        }
+
+        if( !check )
+            break;
+        
+        kq += count;
+        count = 0;
+    }
+
+    return kq;
+}
+
+vector<int> strToVector( string s ){
+    vector<int> gia;
+    int num = 0;
+
+    for( char x : s ){
+        if( x != ',' )
+            num = num * 10 + ( x - '0' );
+        else{
+            gia.push_back( num );
+            num = 0;
+        }
+    }
+    gia.push_back( num );
+
+    return gia;
+}
+
 int main(){
     int t;
     cin >> t;
@@ -8,67 +51,10 @@ int main(){
         string s;
         int k;
         cin >> s >> k;
-        map<int, int> mp;
-        queue<int> q;
-        int kq = 0, count = 0;
 
-        int so_ve = 0;
-        for( char x : s ){
-            if( x != ',' )
-                so_ve = so_ve * 10 + ( x - '0' );
-            else{
-                q.push( so_ve );
-                mp[count] = so_ve;
-                so_ve = 0;
-                count++;
-            }
-        }
+        vector<int> v = strToVector( s );
 
-        if( so_ve ){
-            q.push( so_ve );
-            mp[count] = so_ve;
-        }
-        count = 0;
-
-        int pos = 0, check = 1;
-        while( 1 ){
-            int size = q.size();
-
-            for( int i = 0; i < size; i++ ){
-                if( !mp[k] ){
-                    check = 0;
-                    kq += count;
-                    break;
-                }
-                else if( q.front() ){
-                    q.front() -= 1;
-
-                    while( pos < mp.size() && !mp[pos] )
-                        pos++;
-                    
-                    if( pos < mp.size() ){
-                        mp[pos]--;
-                        pos++;
-                    }
-                    count++;
-
-                    int temp = q.front();
-                    q.pop();
-                    q.push( temp );
-                }
-                else
-                    q.pop();
-            }
-
-            if( !check || q.empty() )
-                break;
-            
-            kq += count;
-            pos = 0;
-            count = 0;
-        }
-
-        cout << kq << endl;
+        cout << totalTimeToBuy( v, k ) << endl;
     }
     system("pause");
     return 0;
