@@ -1,30 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-queue<int> findUnion( queue<int> &q1, queue<int> q2 ){
-    while( !q2.empty() ){
-        int size = q1.size();
+queue<int> findIntersection( queue<int> q1, queue<int> q2 ){
+    queue<int> result;
 
-        int check = 1;
+    while( !q1.empty() ){
+        int size = q2.size();
+
+        int check = 0;
         for( int i = 0; i < size; i++ ){
-            if( q1.front() == q2.front() )
-                check = 0;
+            if( q2.front() == q1.front() )
+                check = 1;
             
-            int temp = q1.front();
-            q1.pop();
-            q1.push( temp );
+            int temp = q2.front();
+            q2.pop();
+            q2.push( temp );
         }
 
         if( check ){
-            int temp = q2.front();
-            q1.push( temp );
-            q2.pop();
+            int temp = q1.front();
+            result.push( temp );
+            q1.pop();
         }
         else
-            q2.pop();
+            q1.pop();
     }
 
-    return q1;
+    return result;
 }
 
 int main(){
@@ -71,7 +73,7 @@ int main(){
         }
         q2.push( num );
 
-        queue<int> kq = findUnion( q1, q2 );
+        queue<int> kq = findIntersection( q1, q2 );
         while( !kq.empty() ){
             cout << kq.front();
             kq.pop();
