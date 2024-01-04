@@ -2,17 +2,22 @@
 using namespace std;
 
 int main(){
-    unordered_set<int> s;
-    s.insert( 88 );
-    s.insert( 5 );
-    s.insert( 100 );
-    s.insert( 2 );
-    s.insert( 100 );
-    s.insert( 10 );
+    int t;
+    cin >> t;
+    while( t-- ){
+        int n;
+        cin >> n;
+        int arr[n];
+        for( int i = 0; i < n; i++ )
+            arr[i] = i + 1;
 
-    for( int x : s )
-        cout << x << " ";
-    cout << endl;
+        do{
+            for( int i = 0; i < n; i++ )
+                cout << arr[i];
+            cout << endl;
+        }
+        while( next_permutation( arr, arr + n ) );
+    }
     system("pause");
     return 0;
 }
