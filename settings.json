@@ -80,5 +80,21 @@
     "valarray": "cpp"
   },
   "platformio-ide.autoCloseSerialMonitor": true,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+
+  "powermode.enabled": false,
+  "powermode.shake.enabled": true,
+  "powermode.explosions.maxExplosions": 1,
+  "powermode.explosions.backgroundMode": "mask",
+  "powermode.presets": "flames",
+  "powermode.shake.intensity": 0.3,
+  "powermode.explosions.duration": 350,
+  "powermode.explosions.frequency": 1,
+  "powermode.explosions.size": 7,
+  "powermode.explosions.offset": 0.8,
+  "powermode.combo.timeout": 30,
+  "powermode.combo.location": "off",
+  "powermode.combo.counterEnabled": "hide",
+  "powermode.explosions.enabled": true,
+  "powermode.explosions.gifMode": "continue",
 }
