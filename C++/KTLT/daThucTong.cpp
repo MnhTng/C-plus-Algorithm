@@ -9,7 +9,7 @@ int main(){
         double x;
         cin >> n >> x;
         if( 1 <= n && n <= 20 ){
-            double kq = 0;
+            long double kq = 0;
             int i, denominator = 0;
             for( i = 1; i <= n; i++ ){
                 denominator += i;

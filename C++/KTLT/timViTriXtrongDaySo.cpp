@@ -17,7 +17,6 @@ int main(){
     for( int i = 1; i <= m; i++ ){
         cin >> b[i];
         cout << mp[b[i]] << " ";
-        mp[b[i]]++;
     }
     
     cout << endl;

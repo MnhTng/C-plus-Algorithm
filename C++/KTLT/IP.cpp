@@ -12,7 +12,7 @@ int validIp( string s, int begin, int end ){
     if( length > 3 )
         return 0;
     if( s[begin] == '0' ){
-        if( length == 1 || ( length == 4 && s[begin + 1] == s[begin + 2] == s[end] == 0 ) )
+        if( length == 1 )
             return 1;
         else
             return 0;

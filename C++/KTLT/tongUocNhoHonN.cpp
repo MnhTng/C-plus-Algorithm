@@ -2,7 +2,7 @@
 using namespace std;
 
 long long sum( long n ){
-    long long sum = 0;
+    long long sum = 1;
     for( int i = 2; i <= sqrt( n ); i++ ){
         if( n % i == 0 ){
             sum += i;
@@ -10,7 +10,7 @@ long long sum( long n ){
                 sum += n / i;
         }
     }
-    return sum + 1;
+    return sum;
 }
 
 int main(){
