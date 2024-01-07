@@ -69,5 +69,6 @@
     "bitset": "cpp",
     "set": "cpp",
     "format": "cpp"
-  }
+  },
+  "editor.linkedEditing": true
 }
