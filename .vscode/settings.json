@@ -1,4 +1,10 @@
 {
+  "cSpell.words": [
+    "checknum",
+    "maxk",
+    "nhau",
+    "suat"
+  ],
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -55,5 +61,29 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "files.associations": {
+    "iostream": "cpp",
+    "cmath": "cpp",
+    "complex": "cpp",
+    "bitset": "cpp",
+    "set": "cpp",
+    "format": "cpp"
+  },
+  "editor.linkedEditing": true,
+  "powermode.enabled": false,
+  "powermode.shake.enabled": true,
+  "powermode.explosions.maxExplosions": 1,
+  "powermode.explosions.backgroundMode": "mask",
+  "powermode.presets": "flames",
+  "powermode.shake.intensity": 0.3,
+  "powermode.explosions.duration": 350,
+  "powermode.explosions.frequency": 1,
+  "powermode.explosions.size": 7,
+  "powermode.explosions.offset": 0.8,
+  "powermode.combo.timeout": 30,
+  "powermode.combo.location": "off",
+  "powermode.combo.counterEnabled": "hide",
+  "powermode.explosions.enabled": true,
+  "powermode.explosions.gifMode": "continue"
 }
