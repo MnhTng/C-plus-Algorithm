@@ -82,7 +82,7 @@
   "platformio-ide.autoCloseSerialMonitor": true,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
 
-  "powermode.enabled": false,
+  "powermode.enabled": true,
   "powermode.shake.enabled": true,
   "powermode.explosions.maxExplosions": 1,
   "powermode.explosions.backgroundMode": "mask",
