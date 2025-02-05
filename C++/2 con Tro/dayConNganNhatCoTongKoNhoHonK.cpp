@@ -1,35 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main()
+{
     int t;
     cin >> t;
-    while( t-- ){
-        int n, k;
-        cin >> n >> k;
-        int arr[n];
-        for( int &x : arr )
+    while (t--)
+    {
+        long n, s;
+        cin >> n >> s;
+        int a[n];
+        for (int &x : a)
             cin >> x;
-        
-        int l = 0, r = 0;
-        int result = n;
-        long long sum = 0;
 
-        while( r < n ){
-            while( sum < k ){
-                sum += arr[r];
-                r++;
-            }
-            while( sum >= k ){
-                sum -= arr[l];
+        long l = 0, minGift = LONG_MAX, w = 0;
+        for (int i = 0; i < n; i++)
+        {
+            w += a[i];
+            while (w >= s)
+            {
+                minGift = min(minGift, i - l + 1);
+                w -= a[l];
                 l++;
             }
-            if( result > r - l + 1 )
-                result = r - l + 1;
         }
 
-        cout << result << endl;
+        if (minGift == LONG_MAX)
+            cout << "0" << endl;
+        else
+            cout << minGift << endl;
     }
     system("pause");
-    return 0; 
+    return 0;
 }

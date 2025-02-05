@@ -1,54 +1,46 @@
 /*
-Chuyen tu tien to --> hau to :
-    Dao nguoc chuoi tien to
-    Neu gap toan tu --> thuc hien phep toan theo kieu hau to roi day vao stack
-    Neu khong phai toan tu --> day vao stack
+Xet muc do uu tien cua cac toan tu
+    *, /, %  -->  +, -  -->  (
+        muc do uu tien cao hon duoc day vao stack
+        muc do uu tien khong cao hon se duoc xuat ra
+Chuyen tu tien to -> hau to
 */
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void hau_to( string s ){
+void solve(string s)
+{
     stack<string> st;
-    
-    for( char c : s ){
-        if( c >= 'a' && c <= 'z' ){
-            string temp = "";
-            temp += c;
-            st.push( temp );
+    for (int i = s.length() - 1; i >= 0; i--)
+    {
+        if (isalpha(s[i]))
+        {
+            st.push(string(1, s[i]));
         }
-        else{
-            string temp = "";
-            int index = 0;
-
-            while( !st.empty() && index < 2 ){
-                temp += st.top();
-                st.pop();
-                index++;
-            }
-
-            temp += c;
-            st.push( temp );
+        else
+        {
+            string op1 = st.top();
+            st.pop();
+            string op2 = st.top();
+            st.pop();
+            string tmp = op1 + op2 + s[i];
+            st.push(tmp);
         }
     }
-
-    while( !st.empty() ){
-        cout << st.top();
-        st.pop();
-    }
-
-    cout << endl;
+    cout << st.top() << endl;
 }
 
-int main(){
+int main()
+{
     int t;
     cin >> t;
-    while( t-- ){
+    while (t--)
+    {
         string s;
         cin >> s;
-        reverse( s.begin(), s.end() );
 
-        hau_to( s );
+        solve(s);
     }
     system("pause");
     return 0;

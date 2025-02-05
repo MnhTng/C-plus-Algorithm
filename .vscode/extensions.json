@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-vscode.cpptools-extension-pack",
-        "hoovercj.vscode-power-mode"
+        "hoovercj.vscode-power-mode",
+        "danielpinto8zz6.c-cpp-compile-run"
     ]
 }

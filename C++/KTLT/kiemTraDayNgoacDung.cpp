@@ -1,30 +1,57 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main()
+{
     int t;
     cin >> t;
-    while( t-- ){
+    cin.ignore();
+    while (t--)
+    {
         string s;
-        cin >> s;
+        getline(cin, s);
         stack<char> st;
 
-        for( char c : s ){
-            if( st.empty() )
-                st.push( c );
-            else{
-                if( st.top() == '(' && c == ')' )
+        int check = 1;
+        for (char c : s)
+        {
+            if (c == '(' || c == '[' || c == '{')
+                st.push(c);
+            else if (c == '}')
+            {
+                if (st.empty())
+                {
+                    check = 0;
+                    break;
+                }
+                else if (st.top() == '{')
                     st.pop();
-                else if( st.top() == '[' && c == ']' )
+            }
+            else if (c == ']')
+            {
+                if (st.empty())
+                {
+                    check = 0;
+                    break;
+                }
+                else if (st.top() == '[')
                     st.pop();
-                else if( st.top() == '{' && c == '}' )
+            }
+            else if (c == ')')
+            {
+                if (st.empty())
+                {
+                    check = 0;
+                    break;
+                }
+                else if (st.top() == '(')
                     st.pop();
-                else
-                    st.push( c );
             }
         }
 
-        if( st.empty() )
+        if (!st.empty())
+            check = 0;
+        if (check)
             cout << "YES" << endl;
         else
             cout << "NO" << endl;
